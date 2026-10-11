@@ -6,35 +6,24 @@ SurgeShield AI is a high-performance, real-time banking fraud intelligence syste
 
 ## 1. Project Architecture
 
-The end-to-end architecture flows from client requests through validation, multi-indicator analytical engines, and persistent MySQL database storage:
+## 1. Project Architecture
 
-```
-                                  CLIENT
-                                    ↓
-                               FastAPI
-                                    ↓
-                         Transaction Validation
-                                    ↓
-                   ┌────────────────┴────────────────┐
-                   ↓                                 ↓
-            ML Fraud Service                   Surge Service
-                   ↓                                 ↓
-                   └────────────────┬────────────────┘
-                                    ↓
-                         Temporal Anomaly Engine
-                                    ↓
-                          Pattern Anomaly Engine
-                                    ↓
-                            Composite Risk Engine
-                                    ↓
-                           Automated Decision Engine
-                                    ↓
-                        MySQL Persistent Storage Layer
-                                    ↓
-                               API Response
-```
+SurgeShield AI uses a multi-engine architecture to analyze banking transactions, detect potential fraud, evaluate transaction surges, calculate composite risk, and support automated transaction decisions.
 
----
+### System Workflow
+
+![SurgeShield AI Architecture](reports/surgeshield-architecture.png)
+
+**Architecture flow:**
+
+1. **Banking Transaction Data:** Receives transaction features.
+2. **Data Processing:** Cleans data and prepares features.
+3. **ML Fraud Detection:** Uses the trained fraud classification model.
+4. **Intelligence Engines:** Performs surge intelligence, temporal analysis, and pattern analysis.
+5. **Risk Intelligence:** Combines available risk indicators into a risk assessment.
+6. **Decision Engine:** Produces a configured transaction decision.
+7. **MySQL and FastAPI:** Stores results and returns API responses.
+8. **React Frontend:** Displays dashboards, transactions, and risk analysis.
 
 ## 2. Part 1: ML Fraud Detection Engine
 
