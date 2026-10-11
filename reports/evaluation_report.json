@@ -1,0 +1,33 @@
+{
+    "dataset_summary": {
+        "total_raw_rows": 199364,
+        "total_cleaned_rows": 198773,
+        "fraud_count": 344,
+        "legitimate_count": 199020,
+        "fraud_percentage": 0.1725
+    },
+    "model_comparison": {
+        "random_forest": {
+            "accuracy": 0.9996981511759527,
+            "roc_auc": 0.986451096670553,
+            "pr_auc": 0.9047593565828382,
+            "fraud_precision": 0.921875,
+            "fraud_recall": 0.8939393939393939,
+            "fraud_f1": 0.9076923076923077,
+            "training_time_seconds": 15.24
+        },
+        "xgboost": {
+            "accuracy": 0.9995220726952585,
+            "roc_auc": 0.9959686563027539,
+            "pr_auc": 0.9321218796534362,
+            "fraud_precision": 0.8133333333333334,
+            "fraud_recall": 0.9242424242424242,
+            "fraud_f1": 0.8652482269503546,
+            "scale_pos_weight": 596.81,
+            "training_time_seconds": 3.52
+        }
+    },
+    "selected_model": "XGBoost",
+    "selection_rationale": "XGBoost achieved a higher PR-AUC (0.9321 vs Random Forest's 0.9048), Fraud F1-Score (0.8652 vs 0.9077), and Fraud Recall (92.42% vs 89.39%). XGBoost handles complex non-linear feature interactions and extreme class imbalance superiorly.",
+    "saved_model_path": "C:\\Users\\chith\\OneDrive\\Desktop\\Zero Code Squad\\surgeshield-ai\\models\\fraud_model.pkl"
+}
